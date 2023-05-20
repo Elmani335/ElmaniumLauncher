@@ -44,7 +44,7 @@ class Splash {
 
     async checkUpdate() {
         if (dev) return this.startLauncher();
-        this.setStatus(`recherche de mise à jour...`);
+        this.setStatus(`Searching for update...`);
 
         ipcRenderer.invoke('update-app').then(err => {
             if (err.error) {
@@ -54,7 +54,7 @@ class Splash {
         })
 
         ipcRenderer.on('updateAvailable', () => {
-            this.setStatus(`Mise à jour disponible !`);
+            this.setStatus(`Update is available !`);
             this.toggleProgress();
             ipcRenderer.send('start-update');
         })
@@ -74,21 +74,21 @@ class Splash {
             this.startLauncher();
         }).catch(e => {
             console.error(e);
-            return this.shutdown("Aucune connexion internet détectée,<br>veuillez réessayer ultérieurement.");
+            return this.shutdown("No internet connection, <br>Please try again later");
         })
     }
 
     startLauncher() {
-        this.setStatus(`Démarrage du launcher`);
+        this.setStatus(`Launching the actual launcher...`);
         ipcRenderer.send('main-window-open');
         ipcRenderer.send('update-window-close');
     }
 
     shutdown(text) {
-        this.setStatus(`${text}<br>Arrêt dans 5s`);
+        this.setStatus(`${text}<br>Stop in 5s`);
         let i = 4;
         setInterval(() => {
-            this.setStatus(`${text}<br>Arrêt dans ${i--}s`);
+            this.setStatus(`${text}<br>Stop in ${i--}s`);
             if (i < 0) ipcRenderer.send('update-window-close');
         }, 1000);
     }

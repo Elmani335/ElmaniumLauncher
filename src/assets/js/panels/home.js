@@ -144,7 +144,7 @@ class Home {
 
             launch.on('progress', (progress, size) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Téléchargement ${((progress / size) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Downloading ${((progress / size) * 100).toFixed(0)}%`
                 ipcRenderer.send('main-window-progress', { progress, size })
                 progressBar.value = progress;
                 progressBar.max = size;
@@ -152,7 +152,7 @@ class Home {
 
             launch.on('check', (progress, size) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Vérification ${((progress / size) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Verification ${((progress / size) * 100).toFixed(0)}%`
                 progressBar.value = progress;
                 progressBar.max = size;
             });
@@ -170,7 +170,7 @@ class Home {
 
             launch.on('patch', patch => {
                 console.log(patch);
-                info.innerHTML = `Patch en cours...`
+                info.innerHTML = `Patching...`
             });
 
             launch.on('data', (e) => {
