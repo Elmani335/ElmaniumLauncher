@@ -9,7 +9,7 @@
 
 - 🔴 Option pour mettre le launcher en maintenance.
 
-- 🔒 Authentification Microsoft.
+- 🔒 Authentification Microsoft/Monjang.
 
 - 🏴‍☠️ Authentification Crack.
 

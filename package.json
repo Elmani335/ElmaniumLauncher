@@ -2,7 +2,7 @@
     "name": "ElmaniumLauncher",
     "preductname": "ElmaniumLauncher",
     "version": "1.3.0",
-    "description": "Launcher Minecraft custom (crack, premium)",
+    "description": "Launcher Minecraft custom (cracked)",
     "main": "src/app.js",
     "author": "Elmani335",
     "url": "https://elmani.net/launcher",
@@ -32,6 +32,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/luuxis/Selvania-Launcher.git"
+        "url": "git+https://github.com/Elmani335/ElmaniumLauncher.git"
     }
 }
