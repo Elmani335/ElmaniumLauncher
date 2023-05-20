@@ -3,6 +3,7 @@
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0/
  */
 
+
 'use strict';
 
 import { database, changePanel, addAccount, accountSelect } from '../utils.js';
@@ -127,7 +128,7 @@ class Login {
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Entrez votre adresse email / Nom d'utilisateur"
+                infoLogin.innerHTML = "Enter your username"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -147,12 +148,11 @@ class Login {
             let account_connect = await Mojang.login(mailInput.value, passwordInput.value)
 
             if (account_connect == null || account_connect.error) {
-                console.log(err)
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                infoLogin.innerHTML = 'Adresse E-mail ou mot de passe invalide'
+                infoLogin.innerHTML = 'Error in username !'
                 return
             }
 
@@ -215,7 +215,7 @@ class Login {
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Entrez votre adresse email / Nom d'utilisateur"
+                infoLogin.innerHTML = "Enter your username"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -224,7 +224,7 @@ class Login {
             }
 
             if (mailInput.value.length < 3) {
-                infoLogin.innerHTML = "Votre nom d'utilisateur doit avoir au moins 3 caractères"
+                infoLogin.innerHTML = "Votre nom d'utilisateur doit avoir au moins 3 caractÃ¨res"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -235,12 +235,11 @@ class Login {
             let account_connect = await Mojang.login(mailInput.value, passwordInput.value)
 
             if (account_connect == null || account_connect.error) {
-                console.log(err)
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                infoLogin.innerHTML = 'Adresse E-mail ou mot de passe invalide'
+                infoLogin.innerHTML = 'Error in username !'
                 return
             }
 
@@ -274,5 +273,4 @@ class Login {
         })
     }
 }
-
 export default Login;

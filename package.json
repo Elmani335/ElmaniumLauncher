@@ -5,7 +5,7 @@
     "description": "Launcher Minecraft custom (cracked)",
     "main": "src/app.js",
     "author": "Elmani335",
-    "url": "http://elmani.net/launcher",
+    "url": "http://launcher.elmani.net",
     "engines": {
         "node": "^18.x.x"
     },
