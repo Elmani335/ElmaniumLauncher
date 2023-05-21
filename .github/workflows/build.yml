@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Get version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_ENV
@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Set up Node
         uses: actions/setup-node@v3
